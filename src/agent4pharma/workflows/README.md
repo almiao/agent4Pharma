@@ -1,0 +1,57 @@
+# 跨模块流程
+
+production_working_sets拥有节点DTO、来源/研究分页及恢复游标投影；production_tool_profile解析冻结工具表，production_stage_spec适配新契约指令和资源，不修改发布库。production_evidence.bound_task_evidence统一准确任务来源范围；production_context_reports从通用观测分页投影诊断，不执行模型。研究纯分项规则归content.research_views，共用有效问题集合归review.review_issue_scope。
+
+newsroom_skills：装配时加载业务技能目录并生成发现指令；production_queue 冻结资源到任务，production_agent_tools 按租约和快照白名单读取。方法资源归 agents/newsroom，运行契约归 runtime/skill_resources；不在技能中重建数据库状态机。
+
+production_evidence负责绑定任务证据与技能记录；writing_research在同一作者任务内保存版本化底稿，production_handoff将准确底稿随最终稿交编辑。主编选题先行，不再创建独立论文理解阶段。制作恢复由production_tasks复用冻结配置与已保存底稿，不设人工补证分支。
+
+background_research负责背景调研中间文档：租约与任务书校验、版本化保存、准确引文及下游交接。保存不新增阶段或调用模型，production_queue将实际文档传给后继，旧任务缺失不从搜索记录猜造。
+
+selected_paper_download：从冻结精选条目构造人工下载请求，不执行推荐判断。旧逐篇复核与全文终判流程已删除。
+
+paper_download_workbench：协调人工单篇下载的绑定请求、幂等任务、进度及失效恢复；HTTP 负责后台线程，composition 注入清单／账本、浏览器与锁。只准备 PDF，不执行模型，不重新决定排序或主题价值。
+
+production_views 提供当前稿件/审核、任务候选与评估关联、编辑决定和回执摘要；production_release_validation 与实际导出共用包有效性校验，无读操作副作用。过期结果保留历史，不进入当前节点报警。
+
+production_intermediates只投影本任务实际保存的研究/调研各版及阅读观察、改稿候选身份，不重复列出交接或技术重试继承的同一保存点。production_views将目录并入只读产物索引，正文仍按准确任务按需读取。
+
+编排业务步骤，不拥有资料身份、来源解析或数据库表的实现。
+
+imported_paper_recommendation将人工推荐映射为准确主文绑定和结构化selection_basis，
+只交接下载前新闻点、理由及原文/机构引用，不把确认记录或旧全文核实问题写成制作要求。
+production_reading_view向模型提供同一依据；已有冻结输入和旧候选序列化保持兼容。见ADR-090。
+
+- daily_literature_discovery.DailyLiteratureDiscovery：按业务日采集、本地预选并输出覆盖报告，不调用远程情报模型。
+- 旧单篇精筛与回归执行已退役；历史数据仅由只读仓储展示，不能创建、重试或转正式候选。
+- discovery_dependencies：上述流程需要的持久化能力组合。具体实现由 composition 装配。
+- production_views：通过制作工作单元公开仓储提供具名产物摘要，保留版本/引用，不批量输出正文，不重写发行有效性规则。
+- 只有跨模块顺序、分支和完成条件放在这里；单来源分页归 collection，新闻比较校验归 discovery。
+- 新增内容生产流程时复用对应模块用例，不把所有角色的内部逻辑堆进一个 workflow 类。
+
+`background_activity` 聚合公开任务契约为首页只读状态；摘要父子任务去重、过期状态提示在此，不探测系统进程、不修改业务状态或触发重试。
+
+`select_local_papers` 负责本地摘要判别、机构与重点期刊依次优先及同档新闻价值排序前10；`compare_paper_news` 一次横向商业比较前10至最多5篇，机构与重点期刊的最终优先级由程序稳定执行，同档保留商业比较次序。保存输入/结果与失败断点。不自动下载、不提交主编候选，旧运行不改写。
+
+- paper_selection_page：按准确批次/运行查询目录、当前下载清单与比较成员；不加载历史全池，不启动模型，不回退到其他运行。composition注入仓储与必要的活动任务查询。
+
+- production_paper_flows：从准确父子任务投影论文制作链和阶段保存点，覆盖立项前论文；不按标题/日期猜关联。
+- production_tasks：领取/撤销租约及人工暂停、停止、同阶段幂等恢复；恢复冻结配置，保留原尝试，任务控制本身不调用模型；工作台显式继续/重试请求由入口交共用执行器推进。业务任务书版本仍由所属用例校验。
+
+production_task_artifacts 通过公开工作单元读取准确任务已提交的决定/稿件/核验报告/渠道包，为输入输出阅读页提供只读契约；研究底稿保留原任务字段，历史缺产物不读取最新版本补位。
+
+production_remake负责已人工推荐论文的独立整轮重做与幂等，仅排队主编选题新根任务；原链保留，当前角色与规范重新冻结。HTTP适配显式重做请求，用户确认重做后由共用执行器自动推进。
+
+article_product_versions统一图文编辑准确版本校验；article_product_editing协调原图复用、定点合成、稿件/图文原子追加与撤销。article_editing保留对话排队和历史候选读取。编辑读取不交付作者底稿；人工修改后直接经human_package_approval确认定稿，不再创建修改后模型核验任务。
+
+manual_article_editing协调人工完整文本保存：保留原始证据及图片字节，人工确认变化后的表述关联，渲染前后重验准确版本、修订及任务状态，复用article_product_editing的版本追加；保存不创建模型任务。
+
+图文来源显示由ArticlePresentation.excluded_source_ids按证据身份冻结；manual_article_editing验证范围，article_product_editing和publication_layout在改稿、恢复和重新排版时复用，始终保留证据存档与正文引文。
+
+## 制作角色与阶段导航
+
+`production_queue.ProductionRoleDefinition`定义角色配置，`runtime/production_execution.py`定义角色、阶段与冻结任务；`production_handoff`和`reader_editing`定义交接。
+
+`reader_editing`拥有阅读工作集与首次观察后开放任务书的原子用例。新v2任务用冻结工具清单选择合并入口，返回完整成稿和必读资源；历史工具继续保留，恢复通过冻结工作集重读。传输与通用上下文回执由MCP适配层处理。
+
+reviewer为稿件评审角色，reading-review负责阅读评审，fact-check负责事实核验；article-revision是协作改稿阶段。角色配置可复用，每次任务独立启动会话。角色提示词、技能目录、工具白名单与输出契约共同决定实际能力，不能只按agents目录数Agent。

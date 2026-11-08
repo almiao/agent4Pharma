@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agent4pharma"
+version = "0.1.0"
+description = "Resumable literature discovery for AI pharma media"
+requires-python = ">=3.12"
+dependencies = [
+    "httpx==0.28.1",
+    "pydantic==2.14.1",
+    "mcp==2.3.0",
+    "deepseek-harness-sdk==0.2.1rc2",
+    "tzdata>=2025.2",
+    "beautifulsoup4>=4.13,<5",
+    "cryptography>=50.0.2",
+    "playwright>=1.64.1",
+    "pymupdf>=2.0",
+]
+
+[dependency-groups]
+dev = ["pytest>=9.2,<10", "ruff>=0.17,<0.18"]
+
+[project.scripts]
+pharma = "agent4pharma.entrypoints.cli.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/agent4pharma"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "D100", "D101", "D102", "D103"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["D100", "D101", "D102", "D103"]
+"scripts/**" = ["D100", "D101", "D102", "D103"]

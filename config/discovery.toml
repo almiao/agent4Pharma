@@ -1,0 +1,34 @@
+policy_version = "agent-llm-pharma-v1"
+intelligence_budget = 30
+paper_shortlist_limit = 5
+paused_journals = ["NEJM AI"] # 人工暂停：当前无法取得主文，新筛选跳过，历史运行不改写。
+timezone = "Asia/Shanghai"
+# 首次采集（重置后无成功游标）只回溯最近一天；稳态每天回看两天以兜住晚索引。
+overlap_days = 2
+initial_days = 1
+page_budget = 50
+data_dir = "data"
+
+[llm]
+base_url = "https://api.deepseek.com"
+model = "deepseek-flash"
+timeout_seconds = 180
+max_tokens = 4096
+
+# Published screening policy compiles source-specific title/abstract queries.
+[sources.pubmed]
+query_mode = "policy"
+query = ""
+[sources.arxiv]
+query_mode = "policy"
+query = ""
+[sources.biorxiv]
+query = ""
+[sources.medrxiv]
+query = ""
+
+[triage]
+enabled = true
+endpoint = "http://127.0.0.1:18895"
+model_revision = "9ff7cf9838e59df461c276b7699d56b244d2af58"
+timeout_seconds = 120

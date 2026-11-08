@@ -1,0 +1,326 @@
+{
+  "upstreams": [
+    {
+      "name": "great-writer",
+      "url": "https://github.com/d-wwei/great-writer",
+      "commit": "266bfd6ec26e5dedd23cd4b569e034b50b58d463",
+      "license": "licenses/great-writer.txt"
+    },
+    {
+      "name": "claude-skills-journalism",
+      "url": "https://github.com/jamditis/claude-skills-journalism",
+      "commit": "a1e2709cea3e6267e8dce286c9ac2239072e8261",
+      "license": "licenses/claude-skills-journalism.txt"
+    },
+    {
+      "name": "humanizer",
+      "url": "https://github.com/blader/humanizer",
+      "commit": "0ef9fe5bc3572734fd3ae6c448fe00a30cd5dcf0",
+      "license": "licenses/humanizer.txt"
+    },
+    {
+      "name": "humanizer-zh",
+      "url": "https://github.com/ai-zixun/humanizer-zh",
+      "commit": "f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3",
+      "license": "licenses/humanizer-zh.txt"
+    }
+  ],
+  "files": [
+    {
+      "target": "contracts/handoffs.md",
+      "kind": "original",
+      "sources": [],
+      "changes": "按本项目已确认的业务流程新写。 newsroom-v14协作审查：总流程压缩、修正图像交接旧描述、统一最多3个发现。"
+    },
+    {
+      "target": "README.md",
+      "kind": "original",
+      "sources": [],
+      "changes": "整合共同编辑判断与角色职责；合并重复要求，按问题成因取舍和重组，以当前成稿效果复核。保留原来源与许可。"
+    },
+    {
+      "target": "roles/editor.md",
+      "kind": "original",
+      "sources": [],
+      "changes": "按本项目已确认的业务流程新写。"
+    },
+    {
+      "target": "roles/writer.md",
+      "kind": "original",
+      "sources": [],
+      "changes": "整合共同编辑判断与角色职责；合并重复要求，按问题成因取舍和重组，以当前成稿效果复核。保留原来源与许可。"
+    },
+    {
+      "target": "skills/context-research/SKILL.md",
+      "kind": "adapted",
+      "sources": [
+        {
+          "project": "claude-skills-journalism",
+          "path": "journalism-core/skills/source-verification/SKILL.md",
+          "sha256": "66fbfdc093c190f44a1ef439528f9380c8121273125d5e2ef520eba96fd5cdd5"
+        }
+      ],
+      "changes": "按本项目采编流程新写，吸收外部背景的出处和同源转载判断。"
+    },
+    {
+      "target": "skills/evidence-check/SKILL.md",
+      "kind": "adapted",
+      "sources": [
+        {
+          "project": "claude-skills-journalism",
+          "path": "journalism-core/skills/evidence-check-workflow/SKILL.md",
+          "sha256": "2b97387f8ca1b65f167938ed7588c41ce8a6722304364222f8cd55ad4dddf585"
+        },
+        {
+          "project": "claude-skills-journalism",
+          "path": "journalism-core/skills/data-journalism/SKILL.md",
+          "sha256": "02892e65a014bc2fef477d70ef8297a00d277db65f51c80523456493ca271fe4"
+        }
+      ],
+      "changes": "科研新闻化、中文重写；职责及取舍见迁移说明。"
+    },
+    {
+      "target": "skills/draft-writing/core/core-finding.md",
+      "kind": "adapted",
+      "sources": [
+        {
+          "project": "great-writer",
+          "path": "core/core-finding.md",
+          "sha256": "2b6523ee4c560ba2d18030e01771ce975af74e54f439e16b3a1b1fdecd10a416"
+        }
+      ],
+      "changes": "科研新闻化、中文重写；职责及取舍见迁移说明。"
+    },
+    {
+      "target": "skills/draft-writing/core/final-check.md",
+      "kind": "adapted",
+      "sources": [
+        {
+          "project": "great-writer",
+          "path": "SKILL.md",
+          "sha256": "da7083e93194828dc8cbe2b9e8d61dfd51a7fa62adbf937919423fbfbb4d8b94"
+        }
+      ],
+      "changes": "整合共同编辑判断与角色职责；合并重复要求，按问题成因取舍和重组，以当前成稿效果复核。保留原来源与许可。"
+    },
+    {
+      "target": "skills/draft-writing/core/humanizer.md",
+      "kind": "adapted",
+      "sources": [
+        {
+          "project": "humanizer",
+          "path": "SKILL.md",
+          "sha256": "3ac977c2c963a3b483988733b57d4087b87d4d6b80a17f5d2640489c7c2f2c90"
+        },
+        {
+          "project": "humanizer-zh",
+          "path": "SKILL.md",
+          "sha256": "71d21e13123d461aa39a799c926270eae3d207ac26117657c73352c37f06d283"
+        },
+        {
+          "project": "humanizer-zh",
+          "path": "references/patterns.md",
+          "sha256": "9e336b49f678afc7a98538cf927e955178b74f74f181beaae3be93c6827d46bf"
+        }
+      ],
+      "changes": "基于blader流程及结构、膨胀、格式、残留、读者模式中文改编；humanizer-zh补充句法诊断。科研例子原创，保留事实与例外，排除强制标点禁令、名人模仿及固定轮次。替换旧Great Writer派生精修正文。"
+    },
+    {
+      "target": "skills/draft-writing/core/research-intake.md",
+      "kind": "adapted",
+      "sources": [
+        {
+          "project": "great-writer",
+          "path": "core/research-protocol.md",
+          "sha256": "cb25b85088cb5fa214fed2ffb8126e72b9a33a7548908eee62d4ceae441eab26"
+        }
+      ],
+      "changes": "科研新闻化、中文重写；职责及取舍见迁移说明。"
+    },
+    {
+      "target": "skills/draft-writing/core/self-review.md",
+      "kind": "adapted",
+      "sources": [
+        {
+          "project": "great-writer",
+          "path": "core/review-protocol.md",
+          "sha256": "6683ee50822751fcb83d72f1c988df76657fdb55171a06cc54089c14e67d0243"
+        }
+      ],
+      "changes": "整合共同编辑判断与角色职责；合并重复要求，按问题成因取舍和重组，以当前成稿效果复核。保留原来源与许可。"
+    },
+    {
+      "target": "skills/draft-writing/core/structure-design.md",
+      "kind": "adapted",
+      "sources": [
+        {
+          "project": "great-writer",
+          "path": "SKILL.md",
+          "sha256": "da7083e93194828dc8cbe2b9e8d61dfd51a7fa62adbf937919423fbfbb4d8b94"
+        }
+      ],
+      "changes": "整合共同编辑判断与角色职责；合并重复要求，按问题成因取舍和重组，以当前成稿效果复核。保留原来源与许可。"
+    },
+    {
+      "target": "skills/draft-writing/modes/science-news.md",
+      "kind": "original",
+      "sources": [],
+      "changes": "按本项目已确认的业务流程新写。 newsroom-v9整理职责：表达、叙事类型、本篇结构、起草方法及入口分别维护，删除重复规则并加入类型适配。 newsroom-v11按用户提供叙事模式v2融合：保留四类模式、推进关系、多贡献示例，结构及自审各自承接，不增加检查节点。"
+    },
+    {
+      "target": "skills/draft-writing/SKILL.md",
+      "kind": "adapted",
+      "sources": [
+        {
+          "project": "great-writer",
+          "path": "SKILL.md",
+          "sha256": "da7083e93194828dc8cbe2b9e8d61dfd51a7fa62adbf937919423fbfbb4d8b94"
+        },
+        {
+          "project": "great-writer",
+          "path": "core/writing-dna.md",
+          "sha256": "0ce689007d93f35d2bd661759f1fe9ffed9ef18fb14ecdb6c79c0dddb60dd567"
+        }
+      ],
+      "changes": "整合共同编辑判断与角色职责；合并重复要求，按问题成因取舍和重组，以当前成稿效果复核。保留原来源与许可。"
+    },
+    {
+      "target": "skills/fact-check/SKILL.md",
+      "kind": "adapted",
+      "sources": [
+        {
+          "project": "great-writer",
+          "path": "modes/editorial-review.md",
+          "sha256": "831a28de9d679493586077a5aba7fb491b5c6822a3fb6675b6b0230751e45a3e"
+        },
+        {
+          "project": "claude-skills-journalism",
+          "path": "journalism-core/skills/editorial-workflow/SKILL.md",
+          "sha256": "686d6ad14e1514968428a619874884ab3709cd2cb55357d4d7ebba423867a787"
+        }
+      ],
+      "changes": "整合共同编辑判断与角色职责；合并重复要求，按问题成因取舍和重组，以当前成稿效果复核。保留原来源与许可。"
+    },
+    {
+      "target": "skills/paper-understanding/SKILL.md",
+      "kind": "original",
+      "sources": [],
+      "changes": "按本项目已确认的业务流程新写。 newsroom-v14协作审查：总流程压缩、修正图像交接旧描述、统一最多3个发现。"
+    },
+    {
+      "target": "skills/topic-selection/SKILL.md",
+      "kind": "adapted",
+      "sources": [
+        {
+          "project": "claude-skills-journalism",
+          "path": "journalism-core/skills/topic-selection/SKILL.md",
+          "sha256": "0440a5208d4daa2daca018a629893e4fb7fb6147acda157f4a99149064d3a1e9"
+        }
+      ],
+      "changes": "整合共同编辑判断与角色职责；合并重复要求，按问题成因取舍和重组，以当前成稿效果复核。保留原来源与许可。"
+    },
+    {
+      "target": "standards/chinese-news-style.md",
+      "kind": "adapted",
+      "sources": [
+        {
+          "project": "claude-skills-journalism",
+          "path": "journalism-core/skills/newsroom-style/SKILL.md",
+          "sha256": "7316fb1267f74f2eede213684a6745b2c755f42645d719847f7aedb1cd70dfa7"
+        }
+      ],
+      "changes": "科研新闻化、中文重写；职责及取舍见迁移说明。 newsroom-v9整理职责：表达、叙事类型、本篇结构、起草方法及入口分别维护，删除重复规则并加入类型适配。 按用户提供中文表达规范v4整理为七部分，剥离结构与事实校验职责；示例明确假设材料并保持事实等价。"
+    },
+    {
+      "target": "standards/scientific-evidence.md",
+      "kind": "adapted",
+      "sources": [
+        {
+          "project": "claude-skills-journalism",
+          "path": "journalism-core/skills/data-journalism/SKILL.md",
+          "sha256": "02892e65a014bc2fef477d70ef8297a00d277db65f51c80523456493ca271fe4"
+        }
+      ],
+      "changes": "科研新闻化、中文重写；职责及取舍见迁移说明。"
+    },
+    {
+      "target": "workflow.md",
+      "kind": "adapted",
+      "sources": [
+        {
+          "project": "claude-skills-journalism",
+          "path": "journalism-core/skills/editorial-workflow/SKILL.md",
+          "sha256": "686d6ad14e1514968428a619874884ab3709cd2cb55357d4d7ebba423867a787"
+        }
+      ],
+      "changes": "科研新闻化、中文重写；职责及取舍见迁移说明。 newsroom-v14协作审查：总流程压缩、修正图像交接旧描述、统一最多3个发现。"
+    },
+    {
+      "target": "skills/layout-production/SKILL.md",
+      "kind": "original",
+      "sources": [],
+      "changes": "整合共同编辑判断与角色职责；合并重复要求，按问题成因取舍和重组，以当前成稿效果复核。保留原来源与许可。"
+    },
+    {
+      "target": "skills/paper-understanding/references/output-contract.md",
+      "kind": "original",
+      "sources": []
+    },
+    {
+      "target": "skills/paper-understanding/references/paper-types.md",
+      "kind": "original",
+      "sources": []
+    },
+    {
+      "target": "standards/audience.md",
+      "kind": "original",
+      "sources": [],
+      "changes": "用户提供的目标读者demo；统一知识假设、阅读需求与写作原则。"
+    },
+    {
+      "target": "skills/draft-writing/references/research-contract.md",
+      "kind": "original",
+      "sources": []
+    },
+    {
+      "target": "skills/draft-writing/references/reader-explanation.md",
+      "kind": "original",
+      "sources": [],
+      "changes": "v29按信息用途组织原创假设示例，覆盖方法解释、数值口径、成组证据、身份与条件保留及因果边界；移除单论文叙事与具体数字检查。未复制公众号或第三方技能正文。"
+    },
+    {
+      "target": "skills/reading-review/SKILL.md",
+      "kind": "original",
+      "sources": [],
+      "changes": "整合共同编辑判断与角色职责；合并重复要求，按问题成因取舍和重组，以当前成稿效果复核。保留原来源与许可。"
+    },
+    {
+      "target": "skills/reading-review/references/appeal-and-flow.md",
+      "kind": "original",
+      "sources": [],
+      "changes": "整合共同编辑判断与角色职责；合并重复要求，按问题成因取舍和重组，以当前成稿效果复核。保留原来源与许可。"
+    },
+    {
+      "target": "skills/reading-review/references/language-naturalness.md",
+      "kind": "original",
+      "sources": []
+    },
+    {
+      "target": "standards/news-signals.md",
+      "kind": "original",
+      "sources": [],
+      "changes": "整合共同编辑判断与角色职责；合并重复要求，按问题成因取舍和重组，以当前成稿效果复核。保留原来源与许可。"
+    },
+    {
+      "target": "skills/reading-review/references/calibration-cases.md",
+      "kind": "original",
+      "sources": []
+    },
+    {
+      "target": "skills/draft-writing/core/revision.md",
+      "kind": "original",
+      "sources": [],
+      "changes": "整合共同编辑判断与角色职责；合并重复要求，按问题成因取舍和重组，以当前成稿效果复核。保留原来源与许可。"
+    }
+  ]
+}

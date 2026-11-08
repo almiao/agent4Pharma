@@ -1,0 +1,25 @@
+/* 配置使用正式工作台外壳，表格与表单在内容区自然换行。 */
+.workspace-shell .workspace-navigation-rail>a{display:block}
+.workspace-shell .workspace-navigation-rail .rail-overview{padding:10px 12px;border-bottom:1px solid var(--line);margin-bottom:10px}
+.configuration-nav{margin-top:24px;border-top:1px solid var(--line);padding-top:12px}
+.configuration-shell .workspace-global-links a[aria-current=page]{color:var(--ink);text-decoration:underline;text-underline-offset:6px}
+.configuration-shell .ant-table-cell{overflow-wrap:anywhere}
+.configuration-shell .ant-table{background:transparent}
+.configuration-shell pre{white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%}
+.source-toolbar{padding:0 0 18px}
+.source-toolbar>.ant-input{width:260px}
+.source-toolbar>.ant-select{width:170px}
+.source-pagination{display:flex;align-items:center;gap:12px;padding-top:18px}
+.source-pagination>span{margin-right:auto;color:var(--muted)}
+.source-muted{color:var(--muted);font-size:12px}
+.source-details{padding:8px;overflow-wrap:anywhere}
+.source-details details{margin-top:12px}
+.source-details details>div{border-bottom:1px solid var(--line);padding:8px 0}
+.source-actions{display:flex;justify-content:flex-end;margin-bottom:16px}
+.retrieval-settings{max-width:1200px}
+.retrieval-settings>.ant-alert{margin-bottom:16px}
+.retrieval-toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 20px}
+.retrieval-toolbar>.ant-select{min-width:250px;max-width:100%}
+.retrieval-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px}
+.configuration-shell .prompt-workspace>.business-heading h1{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+@media(max-width:750px){.configuration-shell .trace-rail{display:flex;overflow-x:auto;gap:8px}.configuration-shell .trace-rail>a{flex-shrink:0}.configuration-shell .configuration-nav{display:flex;margin:0;padding:0;border:0;gap:8px}.configuration-shell .rail-task{min-width:max-content;margin:0}.workspace-shell .workspace-navigation-rail .rail-overview{margin:0;white-space:nowrap}.source-toolbar>.ant-input{width:100%}.source-toolbar>.ant-select{flex:1;min-width:140px}.configuration-shell .ant-table-cell{padding:10px 5px!important;font-size:12px}.source-pagination{flex-wrap:wrap}.source-pagination>span{width:100%}.retrieval-fields{grid-template-columns:minmax(0,1fr)}}

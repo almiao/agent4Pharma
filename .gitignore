@@ -1,0 +1,39 @@
+# Python environments and build/test caches
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+# Application data, models, browser sessions and local service state
+/data/
+/blobs/
+/codex/
+/.mineru-service.lock
+/jieba.cache
+/torchinductor_*/
+/mineru-tasks-*/
+/pharma-guard-probe-*/
+/pharma-window-probe-*/
+/pytest-of-*/
+# Python/uv temporary write probes (eight-character tempfile suffix)
+/tmp????????
+/\[--json\]
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+node_modules/
+.pnpm-store/
+dist/
+build/
+# Keep packaged static/live-console assets; ignore workstation files.
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.log

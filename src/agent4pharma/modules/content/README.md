@@ -1,0 +1,31 @@
+# content 责任卡
+
+- research_views提供版本化研究条目目录与单项投影，不读取数据库；授权、分页和节点可见范围由workflows协调。
+
+- 拥有：作者研究底稿、调查资料、稿件版本与关键表述证据。
+- 公开契约：draft_contracts提供稿件及validate_draft；research_contracts提供ResearchFinding；writing_research提供研究底稿、缺口处置与准确版本快照。
+- background_research拥有主编/作者共用的背景问题、调研产出、充分性自评及版本快照；按任务保存，不按角色另建资料孤岛。
+- 应用交接由workflows协调：production_evidence管理任务证据，writing_research保存作者底稿，production_handoff原子交稿与排队核验。
+- 依赖：标准库/Pydantic，不依赖SDK、网络、CLI、Web或持久化实现，不读取其他模块内部表。
+- 仓储在infrastructure/persistence/sqlite/production_repository.py，由统一工作单元提交，不扩充集中存储门面。
+- 需求放置示例：事实引用/范围规则放领域契约；搜索与文档读取走注入端口；租约与任务书版本绑定由工作流负责。
+
+作者围绕主编选题研究与写作，在同一任务内用save_writing_research保存论文理解、必要背景和缺口处置，再提交正文。底稿不替代交稿或独立编辑核验，网页背景不能替代主论文结果。
+
+claim_check按需保存核心主张与边界核对；ResearchFinding的narrative_use/selection_reason/source_relation记录用途、取舍与来源关系。缺省字段不改变旧序列化。web_background_page与web_search_snippet仅能进入background，外部评论不能作为论文核心结果。
+
+save_background_research可先存问题计划，再更新答案、引用、缺口处置及充分性，不结束任务或等待批准。允许零新增问题但须说明理由；充分性是角色自评，程序不代替内容审阅。
+
+文章协作编辑契约在article_editing，拥有选区、候选变更和准确范围应用规则；对话排队与历史候选由workflows/article_editing负责，新图文的直接保存/恢复由workflows/article_product_editing协调。
+
+ManualArticleEdit与ManualFigureText定义人工直接改字、原图位置及原有证据关联文本的输入；workflows/manual_article_editing协调准确版本校验与保存，不调用模型、不接受任意图源或新证据。
+
+ManualArticleEdit.excluded_source_ids只控制文末来源显示，身份须来自当前稿件证据；不删除证据和引文，冻结与继承由发布模块ArticlePresentation和图文工作流负责。
+
+自动返修的局部提交契约位于draft_revision：按准确稿件身份和唯一原文合成新稿，沿用未变引用并接纳变更引用；校验和独立审核仍由production_handoff统一协调。它与人工触发的article_editing图文定点编辑是不同流程，后者不支持整篇重写。
+
+news_outline拥有新闻骨架、自然段计划与材料依赖。WritingResearch.outline随底稿版本化；新任务冻结news-outline-v1，交稿须已有骨架。依赖校验绑定证据身份、文本窗口和已记录页窗/URL；不评判计划质量，也不强制计划段号等于正文段号。旧快照省略空字段。
+
+revision_workspace拥有自动返修候选、补丁编辑和版本保存契约。workflows/revision_workspace协调租约、保存/恢复和预检；draft_submission_validation由候选预检与production_handoff共用。候选可暂缺引用，正式交稿须重新验证严格DraftSubmission并独立审核。它不取代人工图文编辑。
+
+CandidateStep合并一个问题的局部编辑与作者回应，保存及预检由workflows协调；不自动正式提交或关闭审核问题。

@@ -1,0 +1,161 @@
+{
+  "version": "newsroom-v70",
+  "outline_policy": "news-outline-v1",
+  "context_policy": "stage-working-set-v1",
+  "skills": [
+    {
+      "name": "context-research",
+      "description": "围绕新闻选题或写作中的具体缺口调查必要背景，保留真实来源与未知；不单独立项、不生成全面综述。",
+      "entrypoint": "skills/context-research/SKILL.md",
+      "resources": [
+        "contracts/handoffs.md",
+        "skills/context-research/SKILL.md",
+        "standards/chinese-news-style.md",
+        "standards/scientific-evidence.md",
+        "workflow.md",
+        "standards/audience.md"
+      ]
+    },
+    {
+      "name": "evidence-check",
+      "description": "对科研新闻中的具体主张核对原文、数字、实验条件和推断边界，输出支持程度及可验证修正条件；不认证研究真实性或自动开展科研复现。",
+      "entrypoint": "skills/evidence-check/SKILL.md",
+      "resources": [
+        "contracts/handoffs.md",
+        "skills/evidence-check/SKILL.md",
+        "standards/chinese-news-style.md",
+        "standards/scientific-evidence.md",
+        "workflow.md",
+        "standards/audience.md"
+      ]
+    },
+    {
+      "name": "draft-writing",
+      "description": "围绕主编选题理解论文、按需调查背景并保存研究底稿，在同一任务中完成写作和作者自审。",
+      "entrypoint": "skills/draft-writing/SKILL.md",
+      "resources": [
+        "contracts/handoffs.md",
+        "skills/draft-writing/SKILL.md",
+        "standards/news-signals.md",
+        "skills/draft-writing/core/core-finding.md",
+        "skills/draft-writing/core/final-check.md",
+        "skills/draft-writing/core/humanizer.md",
+        "skills/draft-writing/core/research-intake.md",
+        "skills/draft-writing/core/self-review.md",
+        "skills/draft-writing/core/structure-design.md",
+        "skills/draft-writing/modes/science-news.md",
+        "standards/chinese-news-style.md",
+        "standards/scientific-evidence.md",
+        "workflow.md",
+        "standards/audience.md",
+        "skills/draft-writing/references/research-contract.md",
+        "skills/draft-writing/references/reader-explanation.md",
+        "skills/draft-writing/core/revision.md"
+      ]
+    },
+    {
+      "name": "fact-check",
+      "description": "对科研报道的准确稿件版本进行事实核验，检查转述准确性与任务书核心要求，输出通过或要求返修；不重新代写文章或按个人偏好更换选题。",
+      "entrypoint": "skills/fact-check/SKILL.md",
+      "resources": [
+        "contracts/handoffs.md",
+        "skills/fact-check/SKILL.md",
+        "standards/chinese-news-style.md",
+        "standards/scientific-evidence.md",
+        "workflow.md",
+        "standards/audience.md",
+        "standards/news-signals.md"
+      ]
+    },
+    {
+      "name": "paper-understanding",
+      "description": "作者围绕已批准选题理解问题、思路、结果和意义的方法；不是独立执行阶段，不评审科学有效性。",
+      "entrypoint": "skills/paper-understanding/SKILL.md",
+      "resources": [
+        "contracts/handoffs.md",
+        "skills/paper-understanding/SKILL.md",
+        "standards/chinese-news-style.md",
+        "standards/scientific-evidence.md",
+        "workflow.md",
+        "skills/paper-understanding/references/output-contract.md",
+        "skills/paper-understanding/references/paper-types.md",
+        "skills/context-research/SKILL.md",
+        "standards/audience.md"
+      ]
+    },
+    {
+      "name": "topic-selection",
+      "description": "基于绑定论文及已有证据，判断 AI × Biology/Pharma 新闻价值，按需核实关键背景，选择唯一报道角度，并提交立项任务书或不立项理由。不承担完整研究、论文评审或稿件写作。",
+      "entrypoint": "skills/topic-selection/SKILL.md",
+      "resources": [
+        "contracts/handoffs.md",
+        "skills/topic-selection/SKILL.md",
+        "standards/news-signals.md",
+        "standards/chinese-news-style.md",
+        "standards/scientific-evidence.md",
+        "workflow.md",
+        "skills/context-research/SKILL.md",
+        "standards/audience.md"
+      ]
+    },
+    {
+      "name": "layout-production",
+      "description": "将已审核科研新闻编排为手机可读的网页和公众号正文，选择绑定论文原图，保持定稿不改写。",
+      "entrypoint": "skills/layout-production/SKILL.md",
+      "resources": [
+        "skills/layout-production/SKILL.md",
+        "standards/scientific-evidence.md",
+        "workflow.md",
+        "standards/audience.md",
+        "standards/news-signals.md"
+      ]
+    },
+    {
+      "name": "reading-review",
+      "description": "独立评审准确成稿的新闻吸引力、阅读推进与中文自然度，定位实际阅读障碍并有限返修；不认证论文事实、不重新选题或代写全文。",
+      "entrypoint": "skills/reading-review/SKILL.md",
+      "resources": [
+        "skills/reading-review/SKILL.md",
+        "standards/news-signals.md",
+        "skills/reading-review/references/appeal-and-flow.md",
+        "skills/reading-review/references/language-naturalness.md",
+        "skills/reading-review/references/calibration-cases.md",
+        "standards/audience.md",
+        "standards/chinese-news-style.md",
+        "standards/scientific-evidence.md",
+        "workflow.md"
+      ]
+    }
+  ],
+  "profiles": {
+    "editor": [
+      "topic-selection",
+      "evidence-check",
+      "context-research"
+    ],
+    "writer": [
+      "paper-understanding",
+      "context-research",
+      "draft-writing",
+      "evidence-check"
+    ],
+    "reviewer": [
+      "fact-check",
+      "evidence-check",
+      "reading-review"
+    ],
+    "newsroom": [
+      "context-research",
+      "evidence-check",
+      "draft-writing",
+      "fact-check",
+      "paper-understanding",
+      "topic-selection",
+      "layout-production",
+      "reading-review"
+    ],
+    "publisher": [
+      "layout-production"
+    ]
+  }
+}

@@ -1,0 +1,132 @@
+.real-main{padding:24px;min-width:0}.real-error{background:#fff1eb;padding:16px;color:#8a3f22}.real-overview-row{display:flex!important;justify-content:space-between;width:100%;align-items:center;text-align:left;margin:12px 0;padding:20px!important}.real-overview-row small{display:block;color:var(--muted);margin-top:6px}.real-story-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}.real-story-tabs button[aria-pressed=true]{background:#dcebdd}.real-task-layout{display:grid;grid-template-columns:200px minmax(0,1fr);gap:20px}.real-process details{padding:12px;border:1px solid var(--line);margin-bottom:12px}.real-event{padding:20px 0;border-bottom:1px solid var(--line)}.real-event header{display:flex;justify-content:space-between;gap:12px}.real-event header span{font-size:12px;color:var(--muted)}.real-main select,.real-main input:not([type=checkbox]){padding:9px;border:1px solid #bbc9be;background:white;border-radius:5px;max-width:100%}.real-main .human-approval{padding:20px 0}.real-main .publication-preview{margin-top:20px}.real-main .stage-workspace{padding:0}@media(max-width:850px){.real-task-layout{grid-template-columns:1fr}.real-task-layout>aside{display:flex;overflow:auto}.real-task-layout>aside button{min-width:170px}}
+
+.real-app .trace-heading-actions{flex-shrink:0}.real-app .trace-heading>div:first-child{min-width:0}.real-app .trace-heading-actions button{white-space:nowrap}.real-app .publication-controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.real-app .trace-rail{max-height:calc(100vh - 220px)}@media(max-width:750px){.real-app .trace-rail{max-height:none}}
+
+.real-main .node-summary{margin:8px 0 20px}.real-main .node-paper-title{height:auto;white-space:normal;text-align:left;padding:0;max-width:560px}.real-main .business-workspace{padding:0}.real-main .business-toolbar .ant-select{min-width:180px}.real-main details pre{white-space:pre-wrap;overflow-wrap:anywhere}
+
+.real-app a.ant-btn-primary{color:#fff}
+.real-main{overflow-wrap:anywhere}.real-process .trace-values{min-width:0}.real-process .trace-values dd{min-width:0}.real-process .trace-values .trace-values{display:block;margin:8px 0}.real-main [aria-label="制作任务控制"]{margin:12px 0}.real-main [aria-label="制作任务控制"]>button{margin-right:8px}.real-main [aria-label="制作任务控制"] [role=alert]{padding:12px;border:1px solid var(--line);margin-top:12px}@media(max-width:750px){.real-main .batch-toolbar{padding:0 0 20px;flex-wrap:wrap}}
+.real-app .activity-header-button{margin-left:auto;white-space:normal;min-height:44px;height:auto;text-align:left}.activity-task{overflow-wrap:anywhere}.activity-task small{display:block}.activity-drawer-tools{margin:12px 0}.activity-scope{margin-top:16px}
+
+.production-tabs{border-bottom:1px solid var(--line);padding-bottom:16px;margin-top:0}
+.production-tabs button{min-height:44px}
+.production-tabs button span{margin-left:8px;font-variant-numeric:tabular-nums}
+.production-toolbar{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.production-toolbar label{display:flex;flex-direction:column;gap:6px;min-width:160px;font-size:13px}
+.production-toolbar label:first-child{flex:1;min-width:220px;max-width:400px}
+.production-toolbar .ant-select{width:100%}
+.production-toolbar .ant-input-affix-wrapper input.ant-input{padding:0;border:0;background:transparent}
+.production-toolbar .ant-select-placeholder{color:var(--muted)}
+.production-count{align-self:center;color:var(--muted);margin-top:20px}
+.production-title{min-width:0;overflow-wrap:anywhere}
+.production-title strong{font-weight:600}
+.production-title small{display:block;margin-top:8px;color:var(--muted)}
+.production-board .ant-tag{white-space:normal}
+.production-board .ant-table-cell{overflow-wrap:anywhere}
+@media(max-width:750px){.production-toolbar label,.production-toolbar label:first-child{min-width:0;max-width:none;flex:1 1 100%}.production-count{margin-top:0}.production-board .ant-table-thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.production-board .ant-table-row{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--line);padding:12px 0}.production-board .ant-table-cell{display:block;border-bottom:0!important;width:auto!important;padding:8px!important}.production-board .ant-table-cell:first-child{flex:1 1 100%}.production-board .ant-table-cell:last-child{margin-left:auto}.production-board colgroup{display:none}}
+
+/* 制作阶段以紧凑目录呈现，图标表达状态，选中态单独标示。 */
+.real-app .production-back{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:6px 0;border:0;background:transparent;color:var(--muted);font-size:13px}
+.real-app .production-back:hover{color:var(--green);background:transparent}
+.real-task-layout{grid-template-columns:190px minmax(0,1fr);gap:32px;margin-top:20px;align-items:start}
+.production-stage-nav{display:grid;gap:4px}
+.production-stage-nav>div{min-width:0}
+.real-app .production-stage-button{display:flex;align-items:center;gap:11px;width:100%;min-height:48px;padding:11px 12px;border:0;border-radius:6px;background:transparent;text-align:left}
+.production-stage-button>span{flex:1;font-size:14px;font-weight:500;white-space:nowrap}
+.real-app .production-stage-button:hover{background:#f1f5f1}
+.real-app .production-stage-button[aria-pressed=true]{background:#e6efe8;box-shadow:inset 3px 0 #2b614a}
+.production-stage-button .stage-status-icon{flex-shrink:0;color:#76827b}
+.stage-succeeded .stage-status-icon{color:#357450}
+.stage-running .stage-status-icon{color:#326b9e}
+.stage-failed .stage-status-icon{color:#b1443f}
+.stage-blocked .stage-status-icon{color:#a16a19}
+.stage-paused .stage-status-icon{color:#8b7428}
+.stage-selection-icon{color:#637b6b;opacity:0;flex-shrink:0}
+.production-stage-button[aria-pressed=true] .stage-selection-icon{opacity:1}
+.production-stage-nav details{margin:4px 0 8px 12px;font-size:12px;color:var(--muted)}
+.production-stage-nav summary{cursor:pointer;padding:7px 0}
+.production-stage-nav details .rail-task{min-height:44px;padding:8px!important;font-size:12px;margin:3px 0}
+.production-stage-tabs{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}
+@media(max-width:850px){.real-task-layout{grid-template-columns:1fr;gap:20px}.real-task-layout>aside{display:block;overflow:visible}.real-task-layout>aside .production-stage-button{min-width:0}.real-task-layout>aside .production-stage-nav{display:flex;overflow-x:auto;gap:6px;padding-bottom:6px}.real-task-layout>aside .production-stage-nav>div{flex:0 0 auto}.production-stage-button[aria-pressed=true]{box-shadow:inset 0 -3px #2b614a}.production-stage-nav details{max-width:200px}}
+
+.real-task-layout>aside,.real-task-layout>div{min-width:0}
+
+/* 采集集合：范围与页签对齐，状态和查询各承担一个筛选维度。 */
+.collection-heading{display:flex;align-items:center;gap:24px;border-bottom:1px solid var(--line);margin-bottom:18px}
+.collection-heading>.ant-tabs{flex:1;min-width:0}
+.collection-heading .ant-tabs-nav{margin:0;min-height:52px}
+.collection-heading .ant-tabs-nav::before{border:0}
+.collection-tab-count{margin-left:6px;font-size:12px;font-variant-numeric:tabular-nums;color:var(--muted)}
+.collection-status-filters{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.real-app .collection-status-filters button{display:inline-flex;align-items:center;gap:7px;min-height:40px;padding:7px 11px;border:1px solid transparent;border-radius:5px;background:transparent;color:var(--muted);font-size:13px;white-space:nowrap}
+.real-app .collection-status-filters button:hover{background:#f2f6f2;color:var(--ink)}
+.real-app .collection-status-filters button[aria-pressed=true]{background:#e8f0e9;color:var(--green);border-color:#c8d9cc;font-weight:600}
+.collection-status-filters button span{font-size:12px;font-variant-numeric:tabular-nums}
+.collection-status-filters i{width:6px;height:6px;border-radius:50%;background:#a3ada7}
+.collection-status-filters .collection-state-running i{background:#427aa0}
+.collection-status-filters .collection-state-complete i{background:#458060}
+.collection-status-filters .collection-state-partial i{background:#b88a37}
+.collection-status-filters .collection-state-failed i{background:#bc6157}
+.collection-empty-count{font-size:12px;color:var(--muted);margin-left:auto;padding:6px 0 6px 16px;white-space:nowrap}
+.collection-toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.collection-toolbar>.ant-input-affix-wrapper{width:320px;max-width:100%;height:40px;padding:7px 11px;background:#fff;border-color:var(--line)}
+.real-main .collection-toolbar .ant-input-affix-wrapper input.ant-input{border:0;padding:0;background:transparent;border-radius:0;box-shadow:none;min-width:0}
+.collection-toolbar .ant-input-prefix{margin-right:8px;color:var(--muted)}
+.collection-toolbar>.ant-select{width:180px;height:40px}
+.real-app .collection-toolbar>.ant-btn{min-height:40px;border-color:transparent;box-shadow:none}
+.real-app .collection-toolbar>.ant-btn:disabled{color:#87928b;background:transparent;cursor:default}
+.collection-result-count{margin-left:auto;color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums}
+.real-app .collection-node .ant-table-cell .ant-btn-link{height:auto;min-height:36px;white-space:normal;text-align:left;padding-inline:0;border:0;background:transparent;box-shadow:none;color:var(--green)}
+.collection-toolbar .ant-input::placeholder,.collection-toolbar .ant-select-placeholder{color:#7b877f}
+@media(max-width:750px){.collection-heading{margin-bottom:12px}.collection-heading>.ant-tabs{width:100%;flex:auto}.collection-status-filters{gap:3px}.real-app .collection-status-filters button{min-height:44px;padding:7px 9px}.collection-empty-count{margin-left:0;padding-left:9px}.collection-toolbar{gap:8px;margin-bottom:16px}.collection-toolbar>.ant-input-affix-wrapper{width:100%;height:44px}.collection-toolbar>.ant-select{flex:1;min-width:140px;height:44px}.collection-result-count{flex-basis:100%;margin-left:0}}
+
+/* 全局导航只承担跨工作区入口；节点内直接进入集合或准确对象。 */
+.workspace-shell .trace-top{gap:20px;min-height:68px;padding:12px 24px}
+.workspace-global-links{display:flex;align-items:center;gap:24px;margin-left:auto;font-size:13px}
+.workspace-shell .workspace-refresh{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;background:transparent;border-color:transparent;flex-shrink:0}
+.workspace-shell .workspace-refresh:hover{background:#edf3ed}
+.workspace-shell .activity-header-button{margin-left:0}
+.workspace-batch-tools{display:flex;align-items:center;gap:10px 16px;flex-wrap:wrap;min-width:0}
+.workspace-batch-picker{display:flex;align-items:center;gap:8px;min-width:0;max-width:100%;white-space:nowrap;font-size:13px}
+.workspace-batch-picker select{min-width:0;max-width:280px;min-height:38px;padding:6px 10px;border:1px solid var(--line);border-radius:5px;color:var(--ink)}
+.daily-batch-control{min-width:0;max-width:100%}
+.daily-batch-control .ant-alert{margin-top:10px}
+@media(max-width:1100px){
+  .workspace-shell .trace-top:has(.workspace-batch-tools){flex-wrap:wrap}
+  .workspace-batch-tools{order:4;flex:1 1 100%}
+}
+.workspace-shell .trace-layout{align-items:stretch;min-height:calc(100vh - 68px)}
+.workspace-shell .trace-rail{position:sticky;top:0;align-self:start;width:230px;max-height:100vh;padding:20px 14px}
+.workspace-shell .real-main{padding:20px 28px 32px}
+.workspace-page-title{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.workspace-scope{display:flex;align-items:center;justify-content:flex-end;gap:12px;margin:0 0 18px}
+.workspace-scope label{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);min-width:0;max-width:100%}
+.workspace-scope select{max-width:320px;min-height:38px;font-size:13px}
+.production-stage-button .stage-cost{display:block;margin-top:3px;font-size:11px;font-weight:400;color:var(--muted);font-variant-numeric:tabular-nums;white-space:normal}
+.workspace-shell .collection-tabs{gap:24px;margin:0 0 22px;padding:0;border-bottom:1px solid var(--line)}
+.workspace-shell .collection-tabs button{position:relative;min-height:46px;padding:10px 2px;border:0;border-radius:0;background:transparent;color:var(--muted)}
+.workspace-shell .collection-tabs button:hover{color:var(--green);background:transparent}
+.workspace-shell .collection-tabs button[aria-pressed=true]{color:var(--ink);font-weight:600;background:transparent;box-shadow:inset 0 -2px var(--green)}
+.workspace-shell .collection-tabs button span{margin-left:7px;font-size:12px;font-weight:400;font-variant-numeric:tabular-nums}
+@media(max-width:900px){.workspace-shell .trace-rail{width:190px}.workspace-shell .real-main{padding:18px 20px 28px}.workspace-global-links{gap:14px}}
+@media(max-width:750px){.workspace-shell .trace-top{padding:10px 16px;gap:10px;flex-wrap:wrap}.workspace-shell .trace-brand{flex:1}.workspace-global-links{gap:16px;order:3;flex:1 1 100%;margin-left:0}.workspace-shell .activity-header-button{font-size:11px}.workspace-shell .trace-rail{position:static;width:100%;max-height:none;padding:12px 16px}.workspace-shell .real-main{padding:16px}.workspace-scope{justify-content:flex-start}.workspace-scope label{width:100%}.workspace-scope select{min-width:0;flex:1;max-width:none}.workspace-shell .collection-tabs{gap:20px}}
+
+@media(max-width:750px){.workspace-shell .trace-rail{display:flex;gap:6px;overflow-x:auto;align-items:stretch;border-right:0;border-bottom:1px solid var(--line)}.workspace-shell .trace-rail>.rail-task,.workspace-shell .trace-rail>.rail-overview{width:auto;flex:0 0 auto;min-height:44px;white-space:nowrap}.workspace-shell .trace-rail>.rail-task{padding:10px!important}.workspace-shell .trace-rail>.rail-task>div{gap:6px}}
+.real-evidence {
+  margin: 0 0 16px;
+  color: var(--muted);
+}
+.real-evidence summary {
+  cursor: pointer;
+}
+.real-evidence > label,
+.real-evidence > details,
+.real-evidence > button {
+  margin-top: 10px;
+}
+.real-evidence > label {
+  display: block;
+}
+.real-evidence select {
+  max-width: 100%;
+}

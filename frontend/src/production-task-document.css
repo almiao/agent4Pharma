@@ -1,0 +1,53 @@
+/* 阶段内容以文档阅读为中心；元数据和调用过程留在独立视图。 */
+.task-content-views{display:flex;flex-wrap:wrap;gap:0 24px;border-bottom:1px solid var(--line);margin:0 0 20px}
+.real-app .task-content-views button{position:relative;min-height:44px;border:0;background:transparent;border-radius:0;padding:8px 2px;color:var(--muted);font-size:14px}
+.real-app .task-content-views button[aria-pressed=true]{color:var(--ink);font-weight:600;box-shadow:inset 0 -2px var(--green)}
+.real-app .task-content-views button:hover{color:var(--green);background:transparent}
+.task-paper-surface{background:#f3f5f2;padding:28px;min-height:480px;border-radius:6px}
+.task-document{max-width:850px;margin:0 auto;background:#fff;border:1px solid #e1e6df;box-shadow:0 2px 8px #263e3407;padding:42px 52px 56px;color:#28382f;overflow-wrap:anywhere}
+.task-document-heading{border-bottom:1px solid #e6ebe4;padding-bottom:24px;margin-bottom:28px}
+.task-document-heading>span{font-size:13px;color:#65766b}
+.task-document-heading h2{font-size:25px;line-height:1.5;font-weight:650;letter-spacing:.1px;margin:10px 0 0}
+.task-document-heading>p{font-size:12px;color:#65766b;margin:12px 0 0}
+.task-document-body{font-size:16px;line-height:1.9}
+.task-document-body h3{font-size:17px;line-height:1.6;margin:30px 0 10px;font-weight:600}
+.task-document-body h4{font-size:15px;line-height:1.7;margin:18px 0 8px}
+.task-document-body p{margin:0 0 16px;white-space:pre-wrap}
+.task-document-body ul,.task-document-body ol{padding-left:24px;margin:12px 0 22px}
+.task-document-body li{margin:8px 0;padding-left:3px}
+.task-document-body .document-lead{font-size:16px;line-height:1.9;font-weight:500;margin-bottom:28px}
+.task-document-body .document-note{font-size:13px;color:#65766b;line-height:1.8}
+.task-document-body blockquote{border-left:3px solid #cbd8cc;margin:14px 0;padding:4px 0 4px 18px;color:#53665a;white-space:pre-wrap;font-size:14px}
+.task-document-body code{font-size:12px;overflow-wrap:anywhere;color:#65766b}
+.task-document-body pre{white-space:pre-wrap;font-size:13px}
+.real-process .task-document details{border:0;border-top:1px solid #e6ebe4;border-radius:0;padding:12px 0;margin:16px 0 0;font-size:14px}
+.task-document summary{cursor:pointer;min-height:36px;line-height:1.7;padding:6px 0;color:#496452}
+.task-document a{color:#315f47;text-decoration:underline;text-underline-offset:3px}
+.task-document .understanding-report{max-width:none;margin:0;font-size:16px;line-height:1.9;color:inherit}
+.task-document .understanding-tags{margin:0 0 22px}
+.task-document .understanding-takeaway{font-size:16px;font-weight:500;line-height:1.9;margin:0 0 28px}
+.task-document .understanding-explanation{margin:28px 0}
+.task-document .understanding-finding{padding:18px 0}
+.task-document .understanding-boundary{font-size:13px;color:#65766b}
+.task-document .understanding-refs{display:block;color:#65766b;font-size:12px;margin-top:10px}
+.document-verdict{display:inline-block;font-size:13px;padding:2px 9px;border:1px solid #cbd8cc;border-radius:4px;color:#315f47;background:#f3f7f1}
+.verdict-blocked,.severity-blocking{color:#a33d37;background:#fff2f0}
+.verdict-changes_requested,.severity-required{color:#94621d;background:#fff8e7}
+.document-severity{font-size:12px;display:inline-block;padding:1px 7px;border-radius:3px}
+.document-review-issue{border-top:1px solid #e6ebe4;margin-top:20px;padding-top:4px}
+.document-text-change del,.document-text-change ins{display:block;padding:10px;margin:8px 0;white-space:pre-wrap;text-decoration:none}
+.document-text-change del{background:#fff2f0;color:#934940;text-decoration:line-through}
+.document-text-change ins{background:#edf6ed;color:#315f47}
+.document-package-preview{width:100%;height:900px;border:0;background:white}
+.task-document-empty,.task-document-loading{color:var(--muted);padding:44px 24px;font-size:14px}
+.task-document+.task-document{margin-top:24px}
+.task-document .background-download{min-height:44px;border:0;background:none;color:#315f47;padding:0;text-decoration:underline;cursor:pointer;font:inherit}
+.task-execution-authorization{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:0 0 16px}
+.task-execution-records{max-width:100%;font-size:14px}
+.task-identities dl{display:grid;grid-template-columns:100px minmax(0,1fr);gap:8px}
+.task-identities dt{color:var(--muted)}
+.task-identities dd{margin:0;overflow-wrap:anywhere}
+@media(max-width:1100px){.task-paper-surface{padding:18px}.task-document{padding:32px 30px 42px}.task-document-heading h2{font-size:23px}}
+@media(max-width:600px){.task-paper-surface{padding:0;background:transparent;min-height:300px}.task-document{border:0;box-shadow:none;padding:12px 0 30px}.task-document-heading{padding-bottom:20px;margin-bottom:22px}.task-document-heading h2{font-size:22px}.task-content-views{gap:22px;margin-bottom:14px}.task-document summary{min-height:44px}.task-identities dl{grid-template-columns:1fr}.task-document-body{font-size:15px}}
+
+.verdict-ready{color:#246b45}
